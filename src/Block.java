@@ -3,7 +3,7 @@ import java.util.Date;
 class Block {
 
     String hash;
-    private String previousHash;
+    String previousHash;
     private String data;
     private long timeStamp;
 
@@ -14,7 +14,7 @@ class Block {
         this.hash = calculateHash();
     }
 
-    private String calculateHash() {
+    String calculateHash() {
         return StringUtil.applySha256(
                 previousHash +
                         Long.toString(timeStamp) +
